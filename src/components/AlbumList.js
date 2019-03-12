@@ -3,7 +3,8 @@ import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 
 import AlbumDetail from './AlbumDetail';
-import { GetAlbumsAction } from '../actions/AlbumActions';
+//import { GetAlbumsAction } from '../actions/AlbumActions';
+import { GetAlbumsAction } from 'albums-shared2/src/actions/AlbumActions';
 
 class AlbumList extends Component {
 

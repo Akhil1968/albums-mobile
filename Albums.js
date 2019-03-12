@@ -1,24 +1,21 @@
 import React from 'react';
 import { View, Button } from 'react-native';
-import {createStore, applyMiddleware} from 'redux';
-import ReduxThunk from 'redux-thunk';
-import {Provider} from 'react-redux';
+
 import { Actions } from 'react-native-router-flux';
 
 import AlbumList from './src/components/AlbumList';
-import reducers from './src/reducers';
 
-export default class Albums extends React.Component {
-  /* !!!!IMPORTANT!!!! store creation should be outside the render() method */
-  store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
-  render() {
-    return (
-      <Provider store={this.store}>
+
+const Albums = () => (
         <View style={{ flex: 1 }}>
           <AlbumList />
-          <Button title="Camera" onPress={() => Actions.camera()}>   </Button>
+          <Button 
+            title="Counter" 
+            color="#841584"
+            onPress={() => Actions.Counter()}>   
+          </Button>
         </View>
-      </Provider>
     );
-  }
-}
+
+
+export default Albums;
